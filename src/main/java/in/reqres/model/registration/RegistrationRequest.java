@@ -1,4 +1,4 @@
-package in.reqres.model.request.register;
+package in.reqres.model.registration;
 
 public class RegistrationRequest {
     private String email;

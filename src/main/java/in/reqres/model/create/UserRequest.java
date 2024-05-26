@@ -1,4 +1,4 @@
-package in.reqres.model.request.create;
+package in.reqres.model.create;
 
 public class UserRequest {
     private String name;

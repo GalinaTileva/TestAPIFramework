@@ -1,6 +1,6 @@
 package in.reqres.tests.singleuser;
 
-import in.reqres.model.response.singleuser.UserResponse;
+import in.reqres.model.singleuser.UserResponse;
 import in.reqres.tests.ApiTestBase;
 import org.testng.annotations.Test;
 
@@ -16,7 +16,7 @@ public class SingleUserTests extends ApiTestBase {
     public void testGetUserDetails() {
         UserResponse response = given()
                 .when()
-                .pathParam("userId", 2)
+                .pathParam("userId", 2)     //удобно ако използваме csv с много потребителски id-та
                 .when()
                 .get("/users/{userId}")
                 .then()

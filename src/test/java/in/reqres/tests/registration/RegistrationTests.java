@@ -1,6 +1,6 @@
 package in.reqres.tests.registration;
 
-import in.reqres.model.request.register.RegistrationRequest;
+import in.reqres.model.registration.RegistrationRequest;
 import in.reqres.tests.ApiTestBase;
 import in.reqres.utils.ApiUtils;
 import org.testng.annotations.Test;
@@ -37,10 +37,10 @@ public class RegistrationTests extends ApiTestBase {
                 .spec(ApiUtils.jsonRequestSpec())
                 .body(registrationRequest)
                 .when()
-                .post("/register")
+                    .post("/register")
                 .then()
-                .statusCode(400)
-                .body("error", equalTo("Missing password"));
+                    .statusCode(400)
+                    .body("error", equalTo("Missing password"));
     }
 
 

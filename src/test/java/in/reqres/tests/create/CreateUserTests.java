@@ -1,7 +1,7 @@
 package in.reqres.tests.create;
 
-import in.reqres.model.request.create.UserRequest;
-import in.reqres.model.response.create.UserResponse;
+import in.reqres.model.create.UserRequest;
+import in.reqres.model.create.UserResponse;
 import in.reqres.tests.ApiTestBase;
 import in.reqres.utils.ApiUtils;
 import org.testng.annotations.Test;
@@ -28,9 +28,14 @@ public class CreateUserTests extends ApiTestBase {
                 .extract().as(UserResponse.class);
 
         assertNotNull(userResponse.getId());
-        assertEquals("morpheus", userResponse.getName());
-        assertEquals("leader", userResponse.getJob());
         assertNotNull(userResponse.getCreatedAt());
+
+       // assertEquals("morpheus", userResponse.getName());
+        assertEquals(request.getName(), userResponse.getName());
+
+       // assertEquals("leader", userResponse.getJob());
+        assertEquals(request.getJob(), userResponse.getJob());
+
 
     }
 
